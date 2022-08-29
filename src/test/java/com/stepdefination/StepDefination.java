@@ -16,6 +16,7 @@ public class StepDefination {
 	@Given("user launch facebook url")
 	public void user_launch_facebook_url() {
 		WebDriverManager.chromedriver().setup();
+		driver.manage().window().maximize();
 		driver = new ChromeDriver();
 		driver.get("https://www.facebook.com/");
 
@@ -24,7 +25,9 @@ public class StepDefination {
 	@When("user enter valid username{string}and valid password{string}")
 	public void user_enter_valid_username_and_valid_password(String username, String password) {
 		driver.findElement(By.id("email")).sendKeys(username);
+		System.out.println(username);
 		driver.findElement(By.id("pass")).sendKeys(password);
+		System.out.println(password);
 
 	}
 
